@@ -8,16 +8,17 @@ read -p 'License: ' license
 
 tools=()
 IFS=''
-echo "Insert first used tool/framework/library name (or leave empty):"
-while read -r word; do
+read -p "Insert first used tool/framework/library name (or leave empty):" word
+while true; do
     if [ -z $word ]; then
         break
     fi
 
-    echo "Insert next used tool/framework/library name (or leave empty):"
     tools+=($word)
+    read -p "Insert next used tool/framework/library name (or leave empty):" word
 done
 
+# Header
 echo "
 # **:triangular_flag_on_post: $projectname**
 
@@ -28,6 +29,7 @@ echo "
 ---
 "
 
+# Tools
 if [ ${#tools[@]} -gt 0 ]; then
     echo "## **:package: Main tools used**"
     echo ""
@@ -40,6 +42,7 @@ if [ ${#tools[@]} -gt 0 ]; then
     echo "---"
 fi
 
+# Installation, run and other stuff
 echo "
 
 ## **:wrench: Developer usage**
