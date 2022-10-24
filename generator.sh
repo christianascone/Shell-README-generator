@@ -115,5 +115,6 @@ _*$authorfullname*_
 ---
 
 Copyright © $myyear [$authorfullname](https://github.com/$authorgithubusername).
+
 License [$license](LICENSE).
 "
